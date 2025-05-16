@@ -3,202 +3,284 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaushik A Gandhi | AI/ML Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Kaushik A Gandhi | AI/ML Enthusiast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: url('flat-lay-workstation-with-copy-space-laptop.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #f1f1f1;
-      font-family: 'Inter', sans-serif;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
     }
-
-    :root {
-      --accent-color: #4db8ff;
-      --card-bg: rgba(0, 0, 0, 0.6);
-      --card-text: #f1f1f1;
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
     }
-
-    [data-theme="dark"] {
-      --accent-color: #3fa7d6;
+    body {
+      background: #ffffff;
+      color: #000000;
     }
-
-    #theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--accent-color);
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-
-    header {
-      text-align: center;
-      padding: 5rem 1rem 3rem;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-    }
-
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid white;
-      margin-bottom: 1rem;
-    }
-
     nav {
-      margin-top: 1rem;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 10%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     nav a {
-      color: white;
-      margin: 0 1rem;
+      margin-left: 2rem;
       text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.3s;
+      color: #00030C;
+      font-weight: 500;
     }
-    nav a:hover {
-      opacity: 0.8;
+    .contact-btn {
+      background: #00030C;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
     }
-
     section {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 4rem 1rem;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
     }
-
+    .hero {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 8rem 10% 5rem;
+      background: #ffffff;
+      position: relative;
+    }
+    .hero-text {
+      flex: 1;
+      animation: slideLeft 1s ease forwards;
+      opacity: 0;
+      position: relative;
+    }
+    .hero-text .sticker {
+      background: #00030C;
+      color: white;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      transform: translateY(-2rem);
+      opacity: 0;
+      animation: fadeInSlide 1.2s ease forwards;
+    }
+    .hero-text h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #00030C;
+      margin-bottom: 0.5rem;
+    }
+    .hero-text h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #00030C;
+      margin-bottom: 0.5rem;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 500px;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+      animation: slideRight 1.2s ease forwards;
+      opacity: 0;
+    }
+    .hero-image img {
+      max-width: 80%;
+      height: auto;
+      transition: all 1s ease;
+    }
+    .skill-banner {
+      background: #00030C;
+      color: white;
+      text-align: center;
+      font-weight: 500;
+      padding: 1rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
     h2 {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      border-left: 5px solid var(--accent-color);
-      padding-left: 0.5rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      color: var(--card-text);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      margin-bottom: 2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
+      color: #00030C;
       margin-bottom: 1rem;
     }
-
-    .resume-btn {
-      background: var(--accent-color);
+    .about-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    .about-container {
+      width: 100%;
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+    .about-section {
+      min-width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+    }
+    .about-text {
+      flex: 1;
+      padding-right: 2rem;
+    }
+    .about-text p {
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .about-image {
+      flex: 1;
+      text-align: right;
+    }
+    .about-image img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      animation: slideDownShrink 1s ease forwards;
+    }
+    .arrow-controls {
+      position: absolute;
+      bottom: 2rem;
+      width: auto;
+      display: flex;
+      gap: 1rem;
+      z-index: 2;
+    }
+    .arrow-controls button {
+      background: #00030C;
       color: white;
-      padding: 0.6rem 1.2rem;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 1rem;
-      display: inline-block;
+      border: none;
+      padding: 0.3rem 0.8rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      opacity: 0.8;
     }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      color: #ccc;
+    @keyframes slideLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
-
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
+    @keyframes slideRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDownShrink {
+      from { transform: translateY(-200px) scale(1.2); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <button id="theme-toggle">Toggle Theme</button>
-  <header>
-    <img src="profile.jpg" alt="Profile Photo" class="profile-img">
-    <h1>Kaushik A Gandhi</h1>
-    <p>AI/ML Enthusiast | Deep Learning | NLP | Computer Vision</p>
-    <nav>
+  <nav>
+    <div>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    </div>
+    <a class="contact-btn" href="#contact">Contact Me</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="sticker">Hello!</div>
+      <h1>I'm Kaushik Gandhi</h1>
+      <h2>AI/ML and Data Science Enthusiast</h2>
+      <p>Innovative AI/ML and data science enthusiast, self-driven to learn new things everyday.</p>
+    </div>
+    <div class="hero-image">
+      <img src="portrait.png" alt="Kaushik Gandhi">
+    </div>
+  </section>
+
+  <section class="skill-banner">
+    AI/ML &nbsp; ★ &nbsp; Email Marketing &nbsp; ★ &nbsp; Data Analyst &nbsp; ★ &nbsp; NLP
+  </section>
 
   <section id="about">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>I am a self-motivated AI/ML enthusiast with hands-on experience in deep learning, NLP, computer vision, and sentiment analysis. I've developed real-time emotion detection systems, intelligent chatbots, and deployed smart solutions using Python, TensorFlow, and Streamlit. I also served as the Vice President of my department, successfully organizing 11 engaging events.</p>
-      <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+    <div class="about-wrapper">
+      <div class="about-container" id="aboutSlider">
+        <div class="about-section">
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am a highly motivated AI/ML and Data Science enthusiast.</p>
+            <p>With strong problem-solving skills and a passion for innovation.</p>
+            <p>I enjoy applying deep learning and NLP to solve real-world problems.</p>
+            <p>My work spans computer vision, sentiment analysis, and chatbot design.</p>
+            <p>I’m always eager to learn and experiment with emerging technologies.</p>
+          </div>
+          <div class="about-image">
+            <img src="portrait.png" alt="Kaushik About Portrait">
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-text">
+            <h2>Academic Journey</h2>
+            <p>Completed 12th Grade with distinction, majoring in Computer Science.</p>
+            <p>Graduated with a Bachelor's in Computer Science Engineering.</p>
+            <p>Currently pursuing Master's with a specialization in Artificial Intelligence.</p>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-text">
+            <h2>Achievements</h2>
+            <p>Vice President of department, organized 11 events.</p>
+            <p>Winner of “Best Innovative Idea” at recent hackathon.</p>
+            <p>Published an academic paper on depression detection using NLP and emoji sentiment.</p>
+          </div>
+        </div>
+      </div>
+      <div class="arrow-controls">
+        <button onclick="prevAbout()">⟵</button>
+        <button onclick="nextAbout()">⟶</button>
+      </div>
     </div>
   </section>
-
-  <section id="projects">
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Emotion-Based Music Recommender</strong><br>CNN + MediaPipe for webcam-based emotion recognition and mood-aligned music suggestions.</li>
-        <li><strong>Depression Detection via Social Media</strong><br>Multimodal LSTM model combining text and emoji sentiment with TF-IDF and real-time dashboard.</li>
-        <li><strong>Sports Facility Management System</strong><br>Centralized membership and schedule management with dashboards and digital payment integration.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="certifications">
-    <div class="card">
-      <h2>Certifications</h2>
-      <ul>
-        <li>AI & ML and Data Science Foundations – Udemy – Apr 2025</li>
-        <li>Analyzing and Visualizing Data with Microsoft Power BI – Office Master – Apr 2025</li>
-        <li>Email Marketing Professional Certificate – Intuit Mailchimp – Apr 2025</li>
-        <li>NLP with Python for Machine Learning – LinkedIn – Apr 2025</li>
-        <li>Understanding Data Visualization – DataCamp – Nov 2024</li>
-        <li>Ethical AI – Infosys Springboard – Aug 2024</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:kauxhik77@gmail.com">kauxhik77@gmail.com</a></p>
-      <p>Phone: +91 9962113476</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/kaushik-a-b1994124a" target="_blank">linkedin.com/in/kaushik-a-b1994124a</a></p>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Kaushik A Gandhi. All Rights Reserved.
-  </footer>
 
   <script>
-    (() => {
-      const toggleButton = document.getElementById('theme-toggle');
-      if (toggleButton) {
-        toggleButton.onclick = () => {
-          document.documentElement.dataset.theme =
-            document.documentElement.dataset.theme === 'dark' ? '' : 'dark';
-        };
-      }
-    })();
+    let sliderIndex = 0;
+    function updateAboutSlider() {
+      const slider = document.getElementById('aboutSlider');
+      slider.style.transform = `translateX(-${sliderIndex * 100}vw)`;
+    }
+    function nextAbout() {
+      sliderIndex = (sliderIndex + 1) % 3;
+      updateAboutSlider();
+    }
+    function prevAbout() {
+      sliderIndex = (sliderIndex - 1 + 3) % 3;
+      updateAboutSlider();
+    }
   </script>
 </body>
 </html>
