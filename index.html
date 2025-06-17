@@ -44,6 +44,11 @@
       color: #00030C;
       text-decoration: none;
     }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      margin-left: 3rem;
+    }
     .nav-links {
       display: flex;
       align-items: center;
@@ -53,7 +58,7 @@
       text-decoration: none;
       color: #00030C;
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       transition: all 0.3s ease;
       padding: 0.5rem 0;
       position: relative;
@@ -305,6 +310,13 @@
         padding: 1rem;
         gap: 1rem;
       }
+      .nav-center {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+      }
       .nav-links {
         width: 100%;
         flex-direction: column;
@@ -377,13 +389,15 @@
 <body>
   <nav>
     <a href="#" class="logo">KG</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-      <a class="contact-btn" href="#contact">Get In Touch</a>
+    <div class="nav-center">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+    <a class="contact-btn" href="#contact">Get In Touch</a>
   </nav>
 
   <section class="hero">
@@ -400,7 +414,6 @@
       </div>
       <div class="hero-image">
         <img src="potrait.png" alt="Kaushik Gandhi">
-        <img src="https://via.placeholder.com/400x500/4f46e5/ffffff?text=Your+Photo" alt="Kaushik Gandhi"> e3110c0 (Initial commit)
       </div>
     </div>
     
